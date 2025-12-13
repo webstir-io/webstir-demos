@@ -2,6 +2,8 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DEMOS_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+WORKSPACE_ROOT="$(cd "${DEMOS_ROOT}/.." && pwd)"
 
 usage() {
   cat <<'EOF'
@@ -23,19 +25,32 @@ fi
 
 shift
 
-SCRIPT=""
+WATCH=0
+case "${1:-}" in
+  watch )
+    WATCH=1
+    shift
+    ;;
+esac
+
+INIT_MODE=""
+DEMO_FOLDER=""
 case "${MODE}" in
   ssg )
-    SCRIPT="${SCRIPT_DIR}/refresh-ssg-demo.sh"
+    INIT_MODE="ssg"
+    DEMO_FOLDER="ssg-site"
     ;;
   spa )
-    SCRIPT="${SCRIPT_DIR}/refresh-spa-demo.sh"
+    INIT_MODE="spa"
+    DEMO_FOLDER="spa-frontend"
     ;;
   api )
-    SCRIPT="${SCRIPT_DIR}/refresh-api-demo.sh"
+    INIT_MODE="api"
+    DEMO_FOLDER="backend-api"
     ;;
   full|fullstack )
-    SCRIPT="${SCRIPT_DIR}/refresh-full-demo.sh"
+    INIT_MODE="full"
+    DEMO_FOLDER="fullstack-app"
     ;;
   * )
     echo "Unknown demo mode: ${MODE}" >&2
@@ -44,5 +59,23 @@ case "${MODE}" in
     ;;
 esac
 
-exec "${SCRIPT}" "$@"
+DEMO_DIR="${DEMOS_ROOT}/${DEMO_FOLDER}"
 
+echo "Refreshing ${MODE} demo at ${DEMO_DIR}..."
+mkdir -p "${DEMO_DIR}"
+
+# Remove everything inside the demo directory (including dotfiles), but keep the folder.
+rm -rf "${DEMO_DIR}/"{*,.[!.]*,..?*} 2>/dev/null || true
+
+(
+  cd "${WORKSPACE_ROOT}"
+  dotnet run --project webstir-dotnet/CLI -- init "${INIT_MODE}" "${DEMO_DIR}"
+)
+
+echo "Done. Reinitialized ${DEMO_FOLDER}."
+
+if [[ "${WATCH}" -eq 1 ]]; then
+  echo "Starting watch for ${DEMO_DIR}..."
+  cd "${WORKSPACE_ROOT}"
+  exec dotnet run --project webstir-dotnet/CLI -- watch "$@" "${DEMO_DIR}"
+fi
