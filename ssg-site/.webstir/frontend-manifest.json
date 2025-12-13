@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "paths": {
+    "workspace": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site",
+    "src": {
+      "root": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/src",
+      "frontend": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/src/frontend",
+      "app": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/src/frontend/app",
+      "pages": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/src/frontend/pages",
+      "content": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/src/frontend/content",
+      "images": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/src/frontend/images",
+      "fonts": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/src/frontend/fonts",
+      "media": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/src/frontend/media"
+    },
+    "build": {
+      "root": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/build",
+      "frontend": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/build/frontend",
+      "app": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/build/frontend/app",
+      "pages": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/build/frontend/pages",
+      "content": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/build/frontend/pages/docs",
+      "images": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/build/frontend/images",
+      "fonts": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/build/frontend/fonts",
+      "media": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/build/frontend/media"
+    },
+    "dist": {
+      "root": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/dist",
+      "frontend": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/dist/frontend",
+      "app": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/dist/frontend/app",
+      "pages": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/dist/frontend/pages",
+      "content": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/dist/frontend/pages/docs",
+      "images": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/dist/frontend/images",
+      "fonts": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/dist/frontend/fonts",
+      "media": "/Users/iamce/dev/webstir-io/webstir-demos/ssg-site/dist/frontend/media"
+    }
+  },
+  "features": {
+    "htmlSecurity": true,
+    "imageOptimization": true,
+    "precompression": true
+  }
+}
