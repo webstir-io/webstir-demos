@@ -24,6 +24,9 @@
   ],
   "webstir": {
     "mode": "ssg",
-    "moduleManifest": {}
+    "moduleManifest": {},
+    "enable": {
+      "seamlessNav": true
+    }
   }
 }

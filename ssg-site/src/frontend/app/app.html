@@ -6,7 +6,18 @@
     <meta name="description" content="Starter description for your Webstir app. Update it to summarize this page for search results.">
 </head>
 <body>
-    <main> </main>
+    <header class="app-header">
+        <nav class="app-nav" aria-label="Primary">
+            <a href="/" data-seamless>Home</a>
+            <a href="/about" data-seamless>About</a>
+        </nav>
+        <div class="app-shell-note">
+            Shell: <span id="webstir-seamless-session">-</span>
+            · Seamless navigations: <span id="webstir-seamless-nav-count">0</span>
+        </div>
+    </header>
+    <main></main>
+    <script type="module" data-webstir="seamless-nav" src="/seamlessNav.js"></script>
     <script type="module" src="/hmr.js"></script>
     <script src="/refresh.js" async></script>
 </body>
