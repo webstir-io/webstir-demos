@@ -1,0 +1,34 @@
+{
+  "name": "webstir-project",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Static site (SSG) workspace for Webstir.",
+  "dependencies": {
+    "@webstir-io/webstir-testing": "/Users/iamce/dev/webstir-io/webstir-testing",
+    "@webstir-io/webstir-frontend": "/Users/iamce/dev/webstir-io/webstir-frontend"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "autoprefixer": "^10.4.20",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.4.0"
+  },
+  "packageManager": "pnpm@10.5.2\u002Bsha512.da9dc28cd3ff40d0592188235ab25d3202add8a207afbedc682220e4a0029ffbff4562102b9e6e46b4e3f9e8bd53e6d05de48544b0c57d4b0179e22c76d1199b",
+  "browserslist": [
+    "last 2 chrome versions",
+    "last 2 firefox versions",
+    "last 2 safari major versions",
+    "iOS \u003E= 14",
+    "not dead"
+  ],
+  "webstir": {
+    "mode": "ssg",
+    "moduleManifest": {},
+    "enable": {
+      "clientNav": true,
+      "search": true,
+      "contentNav": true
+    }
+  }
+}
