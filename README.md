@@ -16,3 +16,5 @@ Convenience scripts:
 - `utils/refresh-spa.sh` / `utils/watch-spa.sh`
 - `utils/refresh-api.sh` / `utils/watch-api.sh`
 - `utils/refresh-full.sh` / `utils/watch-full.sh`
+- `utils/serve-demo.sh <ssg|spa|api|full> [base|site] [--host <host>] [--port <port>]`
+- `utils/serve-ssg.sh <base|site>`
