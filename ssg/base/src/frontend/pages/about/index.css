@@ -1,10 +1,7 @@
 @layer overrides {
 .page {
   padding: 48px 0 96px;
-}
-
-.page .ws-container {
-  max-width: 760px;
+  --ws-container: 100%;
 }
 
 .page .ws-stack {
@@ -12,7 +9,7 @@
 }
 
 .page-header {
-  max-width: 70ch;
+  max-width: none;
 }
 
 .lead {
@@ -31,6 +28,6 @@ li {
 }
 
 .bullets {
-  max-width: 72ch;
+  max-width: none;
 }
 }
