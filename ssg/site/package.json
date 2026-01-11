@@ -28,7 +28,11 @@
     "enable": {
       "clientNav": true,
       "search": true,
-      "contentNav": true
+      "contentNav": true,
+      "githubPages": true
     }
+  },
+  "scripts": {
+    "deploy": "bash ./utils/deploy-gh-pages.sh"
   }
 }

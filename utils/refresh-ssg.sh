@@ -52,6 +52,7 @@ Usage:
 
 Notes:
   - `site` enables common SSG features after refresh.
+  - Default site features: client-nav search content-nav gh-deploy
   - Override enabled features with WEBSTIR_SSG_SITE_FEATURES (space-separated).
 
 Examples:
@@ -91,18 +92,27 @@ DEMO_DIR="${DEMOS_ROOT_REFRESH_LIB}/ssg/${VARIANT}"
 refresh_demo_dir ssg "${DEMO_DIR}"
 
 if [[ "${VARIANT}" == "site" ]]; then
-  FEATURES="${WEBSTIR_SSG_SITE_FEATURES:-client-nav search content-nav}"
+  FEATURES="${WEBSTIR_SSG_SITE_FEATURES:-client-nav search content-nav gh-deploy}"
   HAS_CONTENT_NAV=0
+  HAS_GH_DEPLOY=0
   ORDERED_FEATURES=()
   for feature in ${FEATURES}; do
     if [[ "${feature}" == "content-nav" ]]; then
       HAS_CONTENT_NAV=1
       continue
     fi
+    if [[ "${feature}" == "gh-deploy" ]]; then
+      HAS_GH_DEPLOY=1
+      continue
+    fi
     ORDERED_FEATURES+=("${feature}")
   done
+
   if [[ "${HAS_CONTENT_NAV}" -eq 1 ]]; then
     ORDERED_FEATURES+=("content-nav")
+  fi
+  if [[ "${HAS_GH_DEPLOY}" -eq 1 ]]; then
+    ORDERED_FEATURES+=("gh-deploy")
   fi
   echo "Enabling SSG site features: ${ORDERED_FEATURES[*]}"
   for feature in "${ORDERED_FEATURES[@]}"; do
