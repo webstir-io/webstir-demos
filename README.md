@@ -1,5 +1,12 @@
 # webstir-demos
 
+> This repository is legacy and no longer the source of truth.
+> Active development has moved to the canonical Webstir monorepo:
+> [webstir-io/webstir](https://github.com/webstir-io/webstir)
+>
+> Demo source location in the monorepo:
+> `examples/demos`
+
 Helper scripts:
 - `utils/watch-demo.sh <ssg|spa|api|full> [base|site] [<webstir-watch-args...>]` — start watch without re-initializing.
 - `utils/enable-feature.sh <project|ssg|ssg-base|ssg-site|spa|api|full> <feature> [<feature-args...>]` — enable a feature in a demo or any project folder.
